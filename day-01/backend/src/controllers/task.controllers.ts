@@ -35,7 +35,7 @@ const taskControllers = {
 
         task.title = title;
         task.description = description;
-        return res.status(200).json({
+        return res.status(201).json({
             message: "Update task successfully",
         });
     },
@@ -43,15 +43,12 @@ const taskControllers = {
         const taskIndex = taskList.findIndex((item: any) => item.id === +req.params.id);
         if (taskIndex !== -1) {
             taskList.splice(taskIndex, 1);
-            return res.status(404).json({
+            return res.status(200).json({
                 message: "Delete task successfully",
             });
         }
-        return res.status(404).json({
-            message: "Task not found",
-        });
 
-        return res.status(200).json({
+        return res.status(404).json({
             message: "Delete task successfully",
         });
     },
