@@ -49,7 +49,7 @@ const taskControllers = {
         }
 
         return res.status(404).json({
-            message: "Delete task successfully",
+            message: "Task not found",
         });
     },
 };
